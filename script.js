@@ -1,3 +1,7 @@
+var startButton = document.querySelector(".start-button");
+var quizCard = document.querySelector(".quiz");
+
+
 let questions = [
     {
         question: "What does HTML stand for?",
@@ -41,11 +45,30 @@ let questions = [
     }
     ];
 
-let lastQuestionIndex = questions.length - 1;
-let runningQuestionIndex = 0;
+    function startGame() {
 
-function renderQuestion() {
-    let q = questions[runningQuestionIndex];
-    question.innerHtml = "<p>" + q.question + "</p>";
+        document.getElementById("question").innerHTML = JSON.stringify(questions);
 
-}
+    };
+
+    console.log(questions);
+
+    startButton.addEventListener("click", startGame);
+
+// function winGame() {
+//     quizCard.textContent = "Correct";
+// }
+
+// function loseGame() {
+//     quizCard.textContent = "Incorrect";
+// }
+
+// function startTimer() {
+//     timer = setInterval(function() {
+//         timerCount--;
+//         timerElement.textContent = timerCount;
+//         if (timerCount >= 0) {
+
+//         }
+//     })
+// }
