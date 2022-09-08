@@ -1,5 +1,7 @@
-var startButton = document.querySelector(".start-button");
+var startButton = document.querySelector("#start-button");
 var quizCard = document.querySelector(".quiz");
+var cont = document.querySelector("#Description");
+var ans = document.querySelector(".answers");
 
 
 let questions = [
@@ -45,15 +47,22 @@ let questions = [
     }
     ];
 
-    function startGame() {
-
-        document.getElementById("question").innerHTML = JSON.stringify(questions);
-
+    function renderQuestions() {
+        // create button elements and append them to the list that way theres no empty buttons. 
+        var btn = document.createElement("button");
+        cont.innerHTML = questions[0].question;
+        btn.innerHTML = questions[0].choiceA;
+        ans.appendChild(btn);
+       
     };
+
+    function startGame() {
+        document.getElementById('Description').innerHTML = renderQuestions();
+    }
 
     console.log(questions);
 
-    startButton.addEventListener("click", startGame);
+    startButton.addEventListener("click", renderQuestions);
 
 // function winGame() {
 //     quizCard.textContent = "Correct";
