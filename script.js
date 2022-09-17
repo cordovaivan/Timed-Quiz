@@ -45,19 +45,14 @@ let questions = [
     function renderQuestions() {
         // create button elements and append them to the list that way theres no empty buttons. 
         cont.innerHTML = questions[0].question;
-        questions.choices.forEach(element => {
-            removeAttribute("hidden");
-            button.innerHTML = element
-            cont.appendChild(button)
-        });
-        // choice1.removeAttribute("hidden");
-        // choice2.removeAttribute("hidden");
-        // choice3.removeAttribute("hidden");
-        // choice4.removeAttribute("hidden");
-        // choice1.innerHTML = questions[0].choices[0];
-        // choice2.innerHTML = questions[0].choices[1];
-        // choice3.innerHTML = questions[0].choices[2];
-        // choice4.innerHTML = questions[0].choices[3];
+        choice1.removeAttribute("hidden");
+        choice2.removeAttribute("hidden");
+        choice3.removeAttribute("hidden");
+        choice4.removeAttribute("hidden");
+        choice1.innerHTML = questions[0].choices[0];
+        choice2.innerHTML = questions[0].choices[1];
+        choice3.innerHTML = questions[0].choices[2];
+        choice4.innerHTML = questions[0].choices[3];
 
     };
 
