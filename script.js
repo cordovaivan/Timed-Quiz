@@ -1,60 +1,72 @@
 var startButton = document.querySelector("#start-button");
-var quizCard = document.querySelector(".quiz");
-var cont = document.querySelector("#Description");
-var ans = document.querySelector(".answers");
+var cont = document.querySelector(".question");
+var choice1 = document.querySelector(".choice1");
+var choice2 = document.querySelector(".choice2");
+var choice3 = document.querySelector(".choice3");
+var choice4 = document.querySelector(".choice4");
+var button = document.querySelectorAll("button");
+
 
 
 let questions = [
     {
         question: "What does HTML stand for?",
-        choiceA: "HyperText Markup Language",
-        choiceB: "Home Text Makeup Language",
-        choiceC: "HyperText Markup Link",
-        choiceD: "HyperText document folder",
-        correct: "A"
+        choices: ["HyperText Markup Language", "Home Text Markup Language", "HyperText Markup Link", "HyperText Document folder"],
+        correct: 1
     },
     {
         question: "What year was javascript created?",
-        choiceA: "2001",
-        choiceB: "2010",
-        choiceC: "1995",
-        choiceD: "1978",
-        correct: "C"
+        choices: ["2001", "2010", "1995", "1978"],
+        correct: 3
     },
     {
         question: "What is css used for?",
-        choiceA: "To add elements to webpage",
-        choiceB: "To add style to an html file",
-        choiceC: "To add functionality to a webpage",
-        choiceD: "To add text to a file",
-        correct: "B"
+        choices: ["To add elements to webpage", "To add style to an html file", "To add functionality to a webpage", "To add text to a file"],
+        correct: 2
     },
     {
         question: "What datatype has quotations around it",
-        choiceA: "array",
-        choiceB: "object",
-        choiceC: "string",
-        choiceD: "boolean",
-        correct: "C"
+        choices: ["array", "object", "string", "boolean"],
+        correct: 3
     },
     {
         question: "What goes at the end of a function?",
-        choiceA: ";",
-        choiceB: "()",
-        choiceC: ",",
-        choiceD: "/",
-        correct: "B"
+        choices: [";", "()", ",", "/",],
+        correct: 2
     }
     ];
 
+    // function Answer() {
+    //     for (let i = 0; i < questions.choices.length; i++) {
+    //         if (questions.question);
+    //     }
+    // };
+
     function renderQuestions() {
         // create button elements and append them to the list that way theres no empty buttons. 
-        var btn = document.createElement("button");
         cont.innerHTML = questions[0].question;
-        btn.innerHTML = questions[0].choiceA;
-        ans.appendChild(btn);
-       
+        questions.choices.forEach(element => {
+            removeAttribute("hidden");
+            button.innerHTML = element
+            cont.appendChild(button)
+        });
+        // choice1.removeAttribute("hidden");
+        // choice2.removeAttribute("hidden");
+        // choice3.removeAttribute("hidden");
+        // choice4.removeAttribute("hidden");
+        // choice1.innerHTML = questions[0].choices[0];
+        // choice2.innerHTML = questions[0].choices[1];
+        // choice3.innerHTML = questions[0].choices[2];
+        // choice4.innerHTML = questions[0].choices[3];
+
     };
+
+
+
+    // for (let i = 0; i < questions.length; i++) {
+    //     cont.innerHTML += questions[i].question
+    //     console.log(cont);
+    // }
 
     function startGame() {
         document.getElementById('Description').innerHTML = renderQuestions();
